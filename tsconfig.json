@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "module": "ES6",
+    "target": "es2016",
+    "lib": ["es6", "dom"],
+    "sourceMap": true,
+    "allowJs": true,
+    "jsx": "react",
+    "moduleResolution": "node",
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "allowSyntheticDefaultImports": true,
+    "rootDir": ".",
+    //"allowImportingTsExtensions": true,
+  },
+  "exclude": [
+    "node_modules",
+    "build",
+    "scripts",
+  ],
+
+  //  "types": [
+//    "typePatches"
+//  ]
+}
+
+
+
+
