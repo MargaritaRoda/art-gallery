@@ -6,7 +6,9 @@
     "lib": ["es6", "dom"],
     "sourceMap": true,
     "allowJs": true,
-    "jsx": "react",
+    "jsx": "react-jsx",
+    "strict": true,
+    "esModuleInterop": true,
     "moduleResolution": "node",
     "noImplicitReturns": true,
     "noImplicitThis": true,
@@ -15,18 +17,11 @@
     "allowSyntheticDefaultImports": true,
     "rootDir": ".",
     //"allowImportingTsExtensions": true,
+    "isolatedModules": true
   },
-  "exclude": [
-    "node_modules",
-    "build",
-    "scripts",
-  ],
+  "exclude": ["node_modules", "build", "scripts"]
 
   //  "types": [
-//    "typePatches"
-//  ]
+  //    "typePatches"
+  //  ]
 }
-
-
-
-
