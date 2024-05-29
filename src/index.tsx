@@ -1,12 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import './global.scss';
+import { Container } from './components/Container/Container';
+import { Sign } from './components/Signin/Sign';
+import { Home } from './components/Home/Home';
+import { Welcome } from './components/Welcome/Welcome';
+import { PictureBanner } from './components/PictureBanner/PictureBanner';
 
 const rootElement = document.getElementById('root') as HTMLElement;
 const root = ReactDOM.createRoot(rootElement);
 
-
 root.render(
-    <React.StrictMode>
-        <h1>Hello Art Gallery</h1>
-    </React.StrictMode>
+  <React.StrictMode>
+    <Home />
+    <PictureBanner />
+    <Welcome />
+    {/*<Container>*/}
+    {/*<Sign />*/}
+    {/*    /!*<h1>Hello Art Gallery</h1>*!/*/}
+    {/*</Container>*/}
+  </React.StrictMode>,
 );

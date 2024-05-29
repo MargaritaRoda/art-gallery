@@ -67,7 +67,7 @@ export const config = {
             //     exclude: /node_modules/,
             // },
             {
-                test: /\.(png|jpg)/,
+                test: /\.(png|jpg|webp)/,
                 type: 'asset/resource',
             },
         ],

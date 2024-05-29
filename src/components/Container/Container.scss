@@ -1,0 +1,13 @@
+//@use 'src/global' as *;
+
+.container {
+  //max-width: 1232px;
+  margin: 0 auto;
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  //
+  //@include medium() {
+  //  padding: 0 20px;
+  //}
+}

@@ -1,0 +1,39 @@
+
+.welcome {
+  display: flex;
+  justify-content: flex-end;
+  background-color: var(--graphite);
+  height: 120%;
+  max-width: 100vw;
+
+}
+
+.welcome-title {
+  position: absolute;
+  top: 35%;
+  left: 20%;
+  z-index: 1;
+  //display: flex;
+
+  color: var(--orange);
+  font-size: 90px;
+  font-weight: 800;
+  width: 900px;
+  //padding-left: 100px;
+}
+.welcome__wrapper {
+  display: flex;
+}
+.welcome-img {
+  display: block;
+  overflow: hidden;
+  width: 750px;
+  height: 680px;
+  place-self: center;
+  margin-right: 200px;
+}
+//.parallax-container {
+//  width: 700px;
+//  height: 600px;
+//  overflow: hidden;
+//}
