@@ -8,26 +8,27 @@
 .home-title {
   place-self: center;
   color: var(--orange);
-  font-size: 90px;
+  font-size: 100px;
   font-weight: 800;
-}
+  letter-spacing: 5px;
 
-.home-title:hover {
-  animation: neonAnim 1s alternate-reverse infinite;
-
-  @keyframes neonAnim {
-    from {
-      text-shadow: 0 0 10px rgba(254, 128, 64, .7),
-      0 0 40px rgba(254, 128, 64, .7),
-      0 0 100px rgba(254, 128, 64, .7);
-    }
-    to {
-      text-shadow: 0 0 5px rgba(254, 128, 64, .7),
-      0 0 20px rgba(254, 128, 64, .7),
-      0 0 60px rgba(254, 128, 64, .7);
+  &:hover {
+    animation: neonAnim 1s alternate-reverse infinite;
+    @keyframes neonAnim {
+      from {
+        text-shadow: 0 0 10px rgba(254, 128, 64, .7),
+        0 0 40px rgba(254, 128, 64, .7),
+        0 0 100px rgba(254, 128, 64, .7);
+      }
+      to {
+        text-shadow: 0 0 5px rgba(254, 128, 64, .7),
+        0 0 20px rgba(254, 128, 64, .7),
+        0 0 60px rgba(254, 128, 64, .7);
+      }
     }
   }
 }
+
 
 .home-nav__wrapper {
   display: flex;
@@ -43,15 +44,17 @@
   justify-content: center;
   flex-direction: column;
   position: fixed;
+  z-index: 100;
   width: 200px;
   height: 72px;
   clip-path: polygon(0 0, 100% 0, 80% 100%, 20% 100%);
   background-color: var(--orange);
+  &:hover {
+    color: var(--text);
+  }
 }
 
-.home-nav:hover {
-  color: var(--text);
-}
+
 
 .home-nav > * {
   width: 25px;
@@ -59,6 +62,7 @@
   background-color: var(--text);
   margin: 3px auto;
 }
+
 .home-nav.close {
   display: none;
 }
@@ -77,26 +81,26 @@
   margin-top: calc(72px + 10px);
   overflow: hidden; /* Ensure content is hidden during the animation */
   height: 0; /* Initial height for the dropdown */
-
 }
-  @keyframes appearance {
-    from {
-      height: 0;
-    }
-    to {
-      height: 82px;
-    }
+
+@keyframes appearance {
+  from {
+    height: 0;
   }
+  to {
+    height: 82px;
+  }
+}
+
 .open {
   height: 82px;
 }
 
 .home-nav__list > * {
   margin: 6px 0;
-  list-style-type: none;
 }
 
 a:hover {
   text-underline-offset: 5px;
-text-decoration: underline var(--text) 2px solid;
+  text-decoration: underline var(--text) 2px solid;
 }

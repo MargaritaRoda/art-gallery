@@ -11,18 +11,18 @@ import gernikaJPG from '../../asset/gernika.jpg';
 export const PictureBanner: React.FC = () => {
   return (
     <ParallaxProvider>
-      <Container>
+      <Container className="picture">
         <ParallaxBanner
-          layers={[{ image: gernikaJPG, speed: -20 }]}
-          // className="aspect-[2/1] height 120hv"
+          layers={[{ image: gernikaJPG, speed: -30 }]}
+          className="picture-banner"
         >
-          <div className="absolute inset-0 flex items-center justify-center">
-            <h1 className="text-8xl text-white font-thin">
-              We bring you the best
+          <div className="picture-banner__title-wrapper">
+            <h1 className="picture-banner__title">
+              We bring <br /> you the <br /> best
             </h1>
-          </div>
-          <div>
-            <button>Gallery</button>
+            <div className="btn-wrapper">
+              <button className="btn">GALLERY</button>
+            </div>
           </div>
         </ParallaxBanner>
       </Container>
