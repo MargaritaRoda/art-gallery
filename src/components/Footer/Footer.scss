@@ -55,4 +55,7 @@
   height: 45px;
   border-radius: 50%;
   background-color: var(--text);
+  &:hover {
+    cursor: pointer;
+  }
 }
