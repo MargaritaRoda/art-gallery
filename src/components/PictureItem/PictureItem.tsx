@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { MouseEventHandler } from 'react';
 import './PictureItem.scss';
 
-type PictureItem = {
+export type PictureItem = {
   id: number;
   img: string;
   title: string;
@@ -16,14 +16,23 @@ export const PictureItem: React.FC<PictureItem> = ({
   genre,
   size,
 }) => {
+  const handleNavigateToPicturePage = () => {
+    // event.preventDefault();
+    console.log(id);
+  };
   return (
-    <article className="picture-item-wrapper">
+    // <a href={}>
+    <article
+      className="picture-item-wrapper"
+      onClick={handleNavigateToPicturePage}
+    >
       <div className="picture-item-img">
-        <img src={img} alt={title} className="picture-img" />
+        <img src={img} alt={title} className="picture-img" loading="lazy" />
       </div>
       <p className="picture-item-title">{title}</p>
       <p className="picture-item-genre">{genre}</p>
       <p className="picture-item-size">{size}</p>
     </article>
+    // </a>
   );
 };
