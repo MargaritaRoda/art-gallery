@@ -15,12 +15,15 @@ import { gallery } from './services/db';
 import { PictureList } from './components/PictureList/PictureList';
 import { PictureContent } from './components/PictureContent/PictureContent';
 import { ImgFullScreen } from './components/ImgFullScreen/ImgFullScreen';
+import { router } from './routers/router';
+import { RouterProvider } from 'react-router-dom';
 
 const rootElement = document.getElementById('root') as HTMLElement;
 const root = ReactDOM.createRoot(rootElement);
 
 root.render(
   <React.StrictMode>
+    <RouterProvider router={router} />
     <PictureContent
       id={gallery[0].id}
       img={gallery[0].img}
