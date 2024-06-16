@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './PictureContent.scss';
+import { ImgFullScreen } from '../ImgFullScreen/ImgFullScreen';
 
 type PictureContent = {
   id: number;
@@ -18,6 +19,8 @@ export const PictureContent: React.FC<PictureContent> = (item) => {
   const [animation, setAnimation] = useState(true);
   const [image, setImage] = useState(items[slide]);
 
+  const [isFullScreenImgOpen, setIsFullScreenImgOpen] = useState(false);
+
   // функция смены слайда
   const changeSlide = (direction = 1) => {
     setAnimation(false);
@@ -28,7 +31,7 @@ export const PictureContent: React.FC<PictureContent> = (item) => {
     } else {
       slideNumber = (slide + direction) % items.length;
     }
-    const value = items.find((i, index) => index === slideNumber);
+    const value = items.find((_, index) => index === slideNumber);
     if (value) {
       setImage(value);
     }
@@ -43,6 +46,10 @@ export const PictureContent: React.FC<PictureContent> = (item) => {
     };
   };
 
+  const handleCloseFullScreenImg = () => {
+    setIsFullScreenImgOpen(false);
+  };
+
   return (
     <article className="picture-content">
       <div className="slider">
@@ -51,30 +58,17 @@ export const PictureContent: React.FC<PictureContent> = (item) => {
           onClick={() => changeSlide(-1)}
           style={{ color: 'white' }}
         ></div>
-        <div
-          className="slide-list"
-          // style={{ transform: `translateX(-${slide * 100}%)` }}
-        >
+        <div className="slide-list">
           <div className={`slide ${animation && 'fadeInAnimation'}`}>
-            <img src={image} alt={item.title} className="slide-image" />
+            <img
+              src={image}
+              alt={item.title}
+              className="slide-image"
+              onClick={() => setIsFullScreenImgOpen(true)}
+            />
           </div>
-
-          {/*{items.map((slide, index) => (*/}
-          {/*  <div className={`slide ${animation && 'fadeInAnimation'}`}>*/}
-          {/*    <img*/}
-          {/*      src={slide}*/}
-          {/*      alt={item.title}*/}
-          {/*      key={index}*/}
-          {/*      className="slide-image"*/}
-          {/*    />*/}
-          {/*  </div>*/}
-          {/*))}*/}
         </div>
-        <div
-          className="arrow right"
-          onClick={() => changeSlide(1)}
-          style={{ color: 'white' }}
-        >
+        <div className="arrow right" onClick={() => changeSlide(1)}>
           {' '}
         </div>
       </div>
@@ -84,6 +78,12 @@ export const PictureContent: React.FC<PictureContent> = (item) => {
         <p className="picture-text-block-size">{item.size}</p>
         <p className="picture-text-block-description">{item.description}</p>
       </div>
+      <ImgFullScreen
+        img={image}
+        isOpen={isFullScreenImgOpen}
+        title={item.title}
+        onHide={handleCloseFullScreenImg}
+      />
     </article>
   );
 };

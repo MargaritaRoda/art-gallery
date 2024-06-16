@@ -14,6 +14,7 @@ import SunflowerPNG from '../../asset/sunflower.png';
 import { gallery } from './services/db';
 import { PictureList } from './components/PictureList/PictureList';
 import { PictureContent } from './components/PictureContent/PictureContent';
+import { ImgFullScreen } from './components/ImgFullScreen/ImgFullScreen';
 
 const rootElement = document.getElementById('root') as HTMLElement;
 const root = ReactDOM.createRoot(rootElement);
@@ -30,6 +31,7 @@ root.render(
       size={gallery[0].size}
       description={gallery[0].description}
     />
+
     {/*<PictureList items={gallery} isLoading={false} />*/}
     {/*<PictureItem*/}
     {/*  genre={gallery[0].genre}*/}

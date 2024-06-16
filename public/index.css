@@ -3,7 +3,9 @@
     --orange-hover: #b5430b;
     --black-background: #0F0F0F;
     --graphite: #303030;
+    --black-backgroundRGBA: rgba(15,15,15, 0.95) ;
     --text: #CCCCCC
+
 }
 
 
