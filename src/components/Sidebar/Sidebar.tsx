@@ -32,6 +32,13 @@ export const Sidebar: React.FC<SidebarProps> = ({ checkboxFields }) => {
     event.preventDefault();
     // request or logic
     console.log(formData);
+    for (let field of formData) {
+      let genres: string[] = [];
+      if (field.checked) {
+        genres.push(field.id);
+      }
+    }
+    //dispatch array of genres to State
   };
 
   return (
