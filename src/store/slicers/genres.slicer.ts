@@ -11,11 +11,11 @@ const genres = createSlice({
     setGenres: (_, action: PayloadAction<Genres>) => {
       return action.payload;
     },
-    updateGenres: (state, action: PayloadAction<Genres>) => {
-      return state.filter((genre) => action.payload.includes(genre));
-    },
+    // updateGenres: (state, action: PayloadAction<Genres>) => {
+    //   return state.filter((genre) => action.payload.includes(genre));
+    // },
   },
 });
 const { actions } = genres;
-export const { setGenres, updateGenres } = actions;
-export default genres;
+export const { setGenres } = actions;
+export default genres.reducer;

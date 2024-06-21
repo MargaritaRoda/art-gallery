@@ -6,16 +6,19 @@ import {
 import { ErrorBoundary } from '../components/ErrorBoundary/ErrorBoundary';
 import { SystemLayout } from '../components/SystemLayout/SystemLayout';
 import { INDEX, PICTURE, PICTURES, SIGNUP } from '../services/config/routs';
+import { Signup } from '../pages/Signup/Signup';
+import { Index } from '../pages/Index/Index';
+import { Pictures } from '../pages/Pictures/Pictures';
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route element={<SystemLayout />}>
-      <Route element={<ErrorBoundary />}>
-        <Route path={INDEX} element={<></>} />
-        <Route path={SIGNUP} element={<></>} />
-        <Route path={PICTURES} element={<></>} />
-        <Route path={PICTURE} element={<></>} />
-      </Route>
+    <Route path="" element={<SystemLayout />}>
+      {/*<Route element={<ErrorBoundary />}>*/}
+      <Route path={INDEX} element={<Index />} />
+      <Route path={SIGNUP} element={<Signup />} />
+      <Route path={PICTURES} element={<Pictures />} />
+      <Route path={PICTURE} element={<></>} />
+      {/*</Route>*/}
     </Route>,
   ),
 );

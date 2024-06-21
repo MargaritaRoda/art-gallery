@@ -2,11 +2,12 @@ import React from 'react';
 import './Footer.scss';
 import { Container } from '../Container/Container';
 import classNames from 'classnames';
+import { about, contactId } from '../../services/config/routs';
 
 export const Footer: React.FC = () => {
   return (
     <Container className="footer">
-      <div className="footer-item">
+      <div className="footer-item" id={contactId}>
         <p className="footer-item__title">Valentin</p>
         <p>Art Gallery</p>
       </div>
@@ -17,7 +18,9 @@ export const Footer: React.FC = () => {
       <div className="footer-item">
         <p className="footer-item__subtitle">Links</p>
         <ul className="footer-item__links">
-          <li>About</li>
+          <li>
+            <a href={about}>About</a>
+          </li>
           <li>
             <a href={'/'}>Gallery</a>
           </li>

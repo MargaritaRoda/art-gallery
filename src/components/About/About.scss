@@ -1,0 +1,25 @@
+.about-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 120%;
+}
+
+.about-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: clamp(100px, 100%, 800px);
+  justify-self: flex-start;
+  text-wrap: wrap;
+}
+
+.about-title {
+  font-weight: 900;
+  font-size: 60px;
+}
+.about-article {
+  font-size: 24px;
+  letter-spacing: 1px;
+}

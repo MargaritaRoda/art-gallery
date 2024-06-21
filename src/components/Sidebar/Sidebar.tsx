@@ -47,7 +47,11 @@ export const Sidebar: React.FC<SidebarProps> = ({ checkboxFields }) => {
       <button className="navbar-burger" onClick={toggleMenu}></button>
       <div className="menu">
         <nav>
-          <a href="#" className="menu-a" style={{ animationDelay: '0.1s' }}>
+          <a
+            href="#"
+            className="menu-a"
+            style={{ animationDelay: '0.1s', textDecoration: 'none' }}
+          >
             About
           </a>
 

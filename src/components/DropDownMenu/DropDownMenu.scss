@@ -1,0 +1,75 @@
+
+.home-nav__wrapper {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  right: 50px;
+  width: 200px;
+  z-index: 10;
+}
+
+.home-nav {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  position: fixed;
+  z-index: 100;
+  width: 200px;
+  height: 72px;
+  clip-path: polygon(0 0, 100% 0, 80% 100%, 20% 100%);
+  background-color: var(--orange);
+  &:hover {
+    color: var(--text);
+  }
+}
+
+.home-nav > * {
+  width: 25px;
+  height: 3px;
+  background-color: var(--text);
+  margin: 3px auto;
+  scroll-behavior: smooth;
+}
+
+.home-nav.close {
+  display: none;
+}
+
+
+.home-nav__list-invisible {
+  display: none;
+}
+
+.home-nav__list {
+  animation: appearance 500ms ease-out;
+  align-self: center;
+  color: var(--text);
+  background-color: var(--orange);
+  width: calc(200px * 0.6);
+  margin-top: calc(72px + 10px);
+  overflow: hidden; /* Ensure content is hidden during the animation */
+  height: 0; /* Initial height for the dropdown */
+}
+
+@keyframes appearance {
+  from {
+    height: 0;
+  }
+  to {
+    height: 120px;
+  }
+}
+
+.open {
+  height: 130px;
+}
+
+.home-nav__list > * {
+  margin: 18px 0;
+}
+
+a:hover {
+  text-underline-offset: 5px;
+  text-decoration: underline var(--text) 2px solid;
+}

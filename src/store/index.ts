@@ -2,25 +2,28 @@ import { configureStore } from '@reduxjs/toolkit';
 import { combineReducers } from 'redux';
 import user from './slicers/user.slicer';
 import genres from './slicers/genres.slicer';
+import filteredGenres from './slicers/filteredGenres.slicer';
 import allPictures from './slicers/allPictures.slicer';
 import { Gallery } from '../services/db';
 import idPicture from './slicers/idPicture.slicer';
 
 export interface RootState {
   genres: string[];
+  filteredGenres: string[];
   allPictures: Gallery[];
   idPicture: number;
   user: {
-    name: string;
+    email: string;
     password: string;
   };
 }
 
 const rootReducer = combineReducers({
-  [user.name]: user.reducer,
-  [idPicture.name]: idPicture.reducer,
-  [genres.name]: genres.reducer,
-  [allPictures.name]: allPictures.reducer,
+  user: user,
+  idPicture: idPicture,
+  genres: genres,
+  filteredGenres: filteredGenres,
+  allPictures: allPictures,
 });
 
 // const persistConfig = {

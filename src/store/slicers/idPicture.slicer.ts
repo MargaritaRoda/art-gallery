@@ -11,4 +11,4 @@ const idPicture = createSlice({
 });
 const { actions } = idPicture;
 export const { addIdPicture } = actions;
-export default idPicture;
+export default idPicture.reducer;

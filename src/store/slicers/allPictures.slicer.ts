@@ -14,4 +14,4 @@ const allPictures = createSlice({
 });
 const { actions } = allPictures;
 export const { setAllPictures } = actions;
-export default allPictures;
+export default allPictures.reducer;

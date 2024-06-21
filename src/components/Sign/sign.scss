@@ -23,12 +23,12 @@ button {
 
 .login-card {
   width: 320px;
-  padding: 100px 30px 32px;
+  padding: 32px 30px 32px;
   border-radius: 1.25rem;
   background: rgba(31, 31, 31, 0.21);
   backdrop-filter: blur(26px);
   text-align: center;
-  margin: auto;
+  //margin: auto;
 }
 
 .login-card > h2 {
