@@ -1,44 +1,53 @@
-import React, { ChangeEvent, FormEvent, useState } from 'react';
+import React, { FormEvent, useState } from 'react';
 import './Sidebar.scss';
 import { CheckboxField } from '../../services/config/checkboxFields';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectGenresForRender } from '../../store/selectors/genre.selector';
+import { setFilteredGenres } from '../../store/slicers/filteredGenres.slicer';
+import {
+  aboutId,
+  contactId,
+  INDEX,
+  PICTURES,
+} from '../../services/config/routs';
+import { NavLink } from 'react-router-dom';
 
 type SidebarProps = {
-  checkboxFields: CheckboxField[];
+  checkboxFields?: CheckboxField[];
+  selectedGenresUser?: string[];
 };
 
-export const Sidebar: React.FC<SidebarProps> = ({ checkboxFields }) => {
+export const Sidebar: React.FC<SidebarProps> = () => {
   const [visible, setVisible] = useState(false);
-
-  const [formData, setFormData] = useState(checkboxFields);
-  console.log(formData);
-  const handleChangeChecked = (event: ChangeEvent<HTMLInputElement>) => {
-    const { name, checked } = event.currentTarget;
-    setFormData((prevFormData) =>
-      prevFormData.map((field) =>
-        field.id === name ? { ...field, checked } : field,
-      ),
-    );
-  };
+  const checkboxFields = useSelector(selectGenresForRender);
+  // console.log('selectedGenre', selectedGenre);
+  // const [formData, setFormData] = useState(selectedGenre ? selectedGenre : []);
+  // useEffect(() => {
+  //   setFormData(selectedGenre);
+  // }, [selectedGenre]);
+  //console.log('checkboxFields1', checkboxFields);
+  // console.log('formData', formData);
+  const dispatch = useDispatch();
 
   const toggleMenu = () => {
     document.body.classList.toggle('open');
   };
 
   const handleCheckBoxOpen = () => {
-    //e.preventDefault();
     setVisible((prevState) => !prevState);
   };
-  const handleFilterItem = (event: FormEvent) => {
+  const handleFilterItem = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    // request or logic
-    console.log(formData);
-    for (let field of formData) {
-      let genres: string[] = [];
-      if (field.checked) {
-        genres.push(field.id);
-      }
-    }
-    //dispatch array of genres to State
+    const fd = new FormData(event.target as HTMLFormElement);
+
+    console.log(Array.from(fd.entries()));
+    console.log(typeof Array.from(fd.entries())[0][0]);
+    const selectedGenresByUser = Array.from(fd.entries()).reduce(
+      (acc: string[], cur) => acc.concat(cur[0]),
+      [],
+    );
+    dispatch(setFilteredGenres(selectedGenresByUser));
+    toggleMenu();
   };
 
   return (
@@ -47,15 +56,19 @@ export const Sidebar: React.FC<SidebarProps> = ({ checkboxFields }) => {
       <button className="navbar-burger" onClick={toggleMenu}></button>
       <div className="menu">
         <nav>
-          <a
-            href="#"
+          <NavLink
+            to={`${INDEX}#${aboutId}`}
             className="menu-a"
             style={{ animationDelay: '0.1s', textDecoration: 'none' }}
           >
             About
-          </a>
-
-          <a href="#" className="menu-a" style={{ animationDelay: '0.2s' }}>
+          </NavLink>
+          <a
+            href={`${PICTURES}#${contactId}`}
+            className="menu-a"
+            style={{ animationDelay: '0.2s', textDecoration: 'none' }}
+            onClick={() => toggleMenu()}
+          >
             Contact
           </a>
 
@@ -68,15 +81,17 @@ export const Sidebar: React.FC<SidebarProps> = ({ checkboxFields }) => {
               Choose a genre
             </p>
             <div className={`${!visible && 'hidden'}`}>
-              {formData.map((field) => (
+              {checkboxFields?.map((field) => (
                 <div className="input-field-wrapper" key={field.id}>
                   <input
                     type="checkbox"
                     id={field.id}
                     name={field.id}
                     className="input-field-input"
-                    onChange={handleChangeChecked}
-                    checked={field.checked}
+                    // onChange={handleChangeChecked}
+                    defaultChecked
+                    // checked={field.checked}
+                    // checked={formData.includes(field.label)}
                   />
                   <label htmlFor={field.id} className="input-field-name">
                     {field.label}

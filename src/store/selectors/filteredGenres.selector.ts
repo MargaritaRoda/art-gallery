@@ -1,5 +1,5 @@
 import { RootState } from '../index';
 
-export const selectGenre = (state: RootState) => {
+export const selectFilterGenre = (state: RootState) => {
   return state.filteredGenres;
 };

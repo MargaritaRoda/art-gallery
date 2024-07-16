@@ -5,6 +5,8 @@
 //}
 
 .picture-content {
+  padding-top: 80px;
+  margin: 0 auto;
   max-width: clamp(300px, 100%, 900px);
 }
 
@@ -65,9 +67,9 @@
   position: absolute;
   z-index: 2;
   border: solid var(--text);
-  border-width: 0 3px 3px 0;
+  border-width: 0 6px 6px 0;
   display: inline-block;
-  padding: 3px;
+  padding: 6px;
 }
 
 .right {
@@ -82,4 +84,10 @@
   left: 8%;
   transform: rotate(135deg);
   //  -webkit-transform: rotate(135deg);
+}
+.picture-text-block-description {
+  color: var(--text);
+  text-wrap: wrap;
+  text-indent: 32px;
+
 }

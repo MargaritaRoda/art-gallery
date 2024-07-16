@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-type Genres = string[];
+export type Genres = string[];
 
 const INITIAL_STATE: Genres = [];
 

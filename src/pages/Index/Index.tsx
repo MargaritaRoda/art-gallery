@@ -6,10 +6,6 @@ import { Welcome } from '../../components/Welcome/Welcome';
 import { About } from '../../components/About/About';
 import { PictureBanner } from '../../components/PictureBanner/PictureBanner';
 import { DropDownMenu } from '../../components/DropDownMenu/DropDownMenu';
-import { useSelector } from 'react-redux';
-import { selectUser } from '../../store/selectors/user.selector';
-import { SIGNUP } from '../../services/config/routs';
-import { redirect } from 'react-router-dom';
 
 export const Index = () => {
   // const selectedUser = useSelector(selectUser);

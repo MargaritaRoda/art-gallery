@@ -17,8 +17,8 @@ button {
   z-index: 1;
   top: -10%;
   left: -10%;
-  width: 120%;
-  height: 120%;
+  width: 100px; //
+  height: 100px;//
   background: transparent;
   //background-image: url("assets/bg.jpeg");
   //background-size: cover;
@@ -29,6 +29,8 @@ button {
 
 body.open .background {
   filter: blur(10px);
+  width: 120%;
+  height: 120%;
 }
 
 .navbar {

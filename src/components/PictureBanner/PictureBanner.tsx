@@ -7,6 +7,7 @@ import {
   ParallaxProvider,
 } from 'react-scroll-parallax';
 import gernikaJPG from '../../asset/gernika.jpg';
+import { PICTURES } from '../../services/config/routs';
 
 export const PictureBanner: React.FC = () => {
   return (
@@ -21,7 +22,9 @@ export const PictureBanner: React.FC = () => {
               We bring <br /> you the <br /> best
             </h1>
             <div className="btn-wrapper">
-              <button className="btn">GALLERY</button>
+              <a href={PICTURES}>
+                <button className="btn">GALLERY</button>
+              </a>
             </div>
           </div>
         </ParallaxBanner>

@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { memo } from 'react';
 import './DropDownMenu.scss';
 import classNames from 'classnames';
 import { NavLink } from 'react-router-dom';
-import { about, contact, PICTURES } from '../../services/config/routs';
+import {
+  aboutId,
+  contactId,
+  INDEX,
+  PICTURES,
+} from '../../services/config/routs';
 
-export const DropDownMenu = () => {
+export const DropDownMenu = memo(() => {
   const [active, setActive] = React.useState(false);
   const handleOpenMenu = () => {
     setActive(!active);
@@ -25,15 +30,15 @@ export const DropDownMenu = () => {
         }
       >
         <li>
-          <a href={about}>About</a>
+          <a href={`${INDEX}#${aboutId}`}>About</a>
         </li>
         <li>
           <NavLink to={PICTURES}>Gallery</NavLink>
         </li>
         <li>
-          <a href={contact}>Contact</a>
+          <a href={`${INDEX}#${contactId}`}>Contact</a>
         </li>
       </ul>
     </div>
   );
-};
+});

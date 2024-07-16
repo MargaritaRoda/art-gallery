@@ -27,7 +27,7 @@ export const gallery: Gallery[] = [
     id: 2,
     img: Sunflower,
     title: 'Sunflower',
-    genre: 'landscape',
+    genre: 'Portrait',
     size: '60 * 80 cm',
     imgInterior: SunflowerInterior,
     imgRow: SunflowerRaw, //без рамы белый фон
@@ -38,7 +38,7 @@ export const gallery: Gallery[] = [
     id: 3,
     img: Sunflower,
     title: 'Sunflower',
-    genre: 'landscape',
+    genre: 'Still Life',
     size: '60 * 80 cm',
     imgInterior: SunflowerInterior,
     imgRow: SunflowerRaw, //без рамы белый фон

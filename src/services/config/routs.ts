@@ -3,7 +3,8 @@ export const SIGNUP = '/signup';
 export const PICTURES = '/pictures';
 export const PICTURE = '/pictures/:id';
 
-export const about = '#about';
 export const aboutId = 'about';
-export const contact = '#contact';
 export const contactId = 'contact';
+
+export const GitHub = 'https://github.com/MargaritaRoda';
+export const LinkedIn = 'https://linkedin.com/in/margarita-terentieva';

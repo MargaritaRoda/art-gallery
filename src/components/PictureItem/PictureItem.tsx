@@ -1,5 +1,8 @@
 import React, { MouseEventHandler } from 'react';
 import './PictureItem.scss';
+import { NavLink } from 'react-router-dom';
+import { addIdPicture } from '../store/slicers/idPicture.slicer';
+import { useDispatch } from 'react-redux';
 
 export type PictureItem = {
   id: number;
@@ -16,23 +19,26 @@ export const PictureItem: React.FC<PictureItem> = ({
   genre,
   size,
 }) => {
+  const dispatch = useDispatch();
   const handleNavigateToPicturePage = () => {
     // event.preventDefault();
+    dispatch(addIdPicture(id));
     console.log(id);
   };
   return (
-    // <a href={}>
-    <article
+    <NavLink
+      to={`/pictures/${id}`}
       className="picture-item-wrapper"
       onClick={handleNavigateToPicturePage}
     >
+      {/*<NavLink to={`/pictures/${id}`}>*/}
       <div className="picture-item-img">
         <img src={img} alt={title} className="picture-img" loading="lazy" />
       </div>
       <p className="picture-item-title">{title}</p>
       <p className="picture-item-genre">{genre}</p>
       <p className="picture-item-size">{size}</p>
-    </article>
-    // </a>
+      {/*</NavLink>*/}
+    </NavLink>
   );
 };

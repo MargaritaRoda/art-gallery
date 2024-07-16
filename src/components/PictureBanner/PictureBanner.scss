@@ -43,9 +43,15 @@
   &:hover {
     background-color: var(--orange-hover);
   }
-
-
+  & > a {
+    text-decoration: none;
+  }
+  & > a:hover {
+    text-decoration: none;
+  }
 }
+
+
 
 .btn-wrapper {
   padding-top: 24px;
