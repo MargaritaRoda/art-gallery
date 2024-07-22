@@ -1,12 +1,8 @@
 import React from 'react';
 import './PictureBanner.scss';
 import { Container } from '../Container/Container';
-import {
-  Parallax,
-  ParallaxBanner,
-  ParallaxProvider,
-} from 'react-scroll-parallax';
-import gernikaJPG from '../../asset/gernika.jpg';
+import { ParallaxBanner, ParallaxProvider } from 'react-scroll-parallax';
+import bannerImgPNG from '../../asset/bannerImg.png';
 import { PICTURES } from '../../services/config/routs';
 
 export const PictureBanner: React.FC = () => {
@@ -14,7 +10,7 @@ export const PictureBanner: React.FC = () => {
     <ParallaxProvider>
       <Container className="picture">
         <ParallaxBanner
-          layers={[{ image: gernikaJPG, speed: -30 }]}
+          layers={[{ image: bannerImgPNG, speed: -30 }]}
           className="picture-banner"
         >
           <div className="picture-banner__title-wrapper">

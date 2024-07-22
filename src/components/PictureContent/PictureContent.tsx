@@ -13,12 +13,22 @@ type PictureContent = {
   description?: string;
 };
 
-export const PictureContent: React.FC<PictureContent> = (item) => {
-  const items = [item.img, item.imgInterior, item.imgRow]; //все слайды
+export const PictureContent: React.FC<PictureContent> = ({
+  id,
+  img,
+  imgInterior,
+  imgRow,
+  title,
+  genre,
+  size,
+  description,
+}) => {
+  const items = [img, imgInterior, imgRow]; //все слайды
   const [slide, setSlide] = useState(0); // индех слайда который показывают
   const [animation, setAnimation] = useState(true);
-  const [image, setImage] = useState(items[slide]);
 
+  const [image, setImage] = useState(img);
+  console.log('image', image);
   const [isFullScreenImgOpen, setIsFullScreenImgOpen] = useState(false);
 
   // функция смены слайда
@@ -61,8 +71,8 @@ export const PictureContent: React.FC<PictureContent> = (item) => {
         <div className="slide-list">
           <div className={`slide ${animation && 'fadeInAnimation'}`}>
             <img
-              src={image}
-              alt={item.title}
+              src={slide === 0 ? img : image}
+              alt={title}
               className="slide-image"
               onClick={() => setIsFullScreenImgOpen(true)}
             />
@@ -73,15 +83,15 @@ export const PictureContent: React.FC<PictureContent> = (item) => {
         </div>
       </div>
       <div className="picture-text-block">
-        <h2 className="picture-text-block-title">{item.title}</h2>
-        <p className="picture-text-block-genre">{item.genre}</p>
-        <p className="picture-text-block-size">{item.size}</p>
-        <p className="picture-text-block-description">{item.description}</p>
+        <h2 className="picture-text-block-title">{title}</h2>
+        <p className="picture-text-block-genre">{genre}</p>
+        <p className="picture-text-block-size">{size}</p>
+        <p className="picture-text-block-description">{description}</p>
       </div>
       <ImgFullScreen
         img={image}
         isOpen={isFullScreenImgOpen}
-        title={item.title}
+        title={title}
         onHide={handleCloseFullScreenImg}
       />
     </article>

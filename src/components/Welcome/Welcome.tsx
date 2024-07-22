@@ -2,7 +2,7 @@ import React from 'react';
 import './welcome.scss';
 import { Container } from '../Container/Container';
 import { Parallax, ParallaxProvider } from 'react-scroll-parallax';
-import gernikaWEBP from '../../asset/gernika.webp';
+import bannerImgGray from '../../asset/bannerImgGray.png';
 
 export const Welcome: React.FC = () => {
   return (
@@ -20,10 +20,9 @@ export const Welcome: React.FC = () => {
             tagOuter="figure"
             scale={[1.5, 0.5, 'easeInQuad']}
           >
-            <img src={gernikaWEBP} alt="Gernika" />
+            <img src={bannerImgGray} alt="Vivaldi" />
           </Parallax>
         </div>
-        {/*</div>*/}
       </Container>
     </ParallaxProvider>
   );

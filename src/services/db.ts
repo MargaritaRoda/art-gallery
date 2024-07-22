@@ -1,6 +1,30 @@
-import Sunflower from '../asset/sunflower.png';
-import SunflowerRaw from '../asset/Van_Gogh_-_Sunflowers.webp';
-import SunflowerInterior from '../asset/sunflowerInMuseum.png';
+import luteFrame from '../asset/dbPictures/lutnya/lutnya_frame.png';
+import lute from '../asset/dbPictures/lutnya/lutnya.png';
+import luteInterior from '../asset/dbPictures/lutnya/lutnya_interior.jpg';
+import forestCows from '../asset/dbPictures/forestCows/forestCows.png';
+import forestCows_frame from '../asset/dbPictures/forestCows/forestCows_frame.png';
+import forestCows_interior from '../asset/dbPictures/forestCows/forestCows_frame.png';
+import fruits from '../asset/dbPictures/fruits/fruits.png';
+import fruits_frame from '../asset/dbPictures/fruits/fruits_frame.png';
+import fruits_interior from '../asset/dbPictures/fruits/fruits_interior.png';
+import winter from '../asset/dbPictures/winter/winter.png';
+import winter_frame from '../asset/dbPictures/winter/winter_frame.png';
+import winter_interior from '../asset/dbPictures/winter/winter_interior.png';
+import forestGreen from '../asset/dbPictures/forestGreen/forestGreen.png';
+import forestGreen_frame from '../asset/dbPictures/forestGreen/forestGreen_frame.png';
+import forestGreen_interior from '../asset/dbPictures/forestGreen/forestGreen_interior.png';
+import astraAutumn from '../asset/dbPictures/astraAutumn/astraAutumn.png';
+import astraAutumn_frame from '../asset/dbPictures/astraAutumn/astraAutumn_frame.png';
+import astraAutumn_interior from '../asset/dbPictures/astraAutumn/astraAutumn_interior.png';
+import astraFruits from '../asset/dbPictures/astraFruits/astraFruits.png';
+import astraFruits_frame from '../asset/dbPictures/astraFruits/astraFruits_frame.png';
+import astraFruits_interior from '../asset/dbPictures/astraFruits/astraFruits_interior.png';
+import bridge from '../asset/dbPictures/bridge/bridge.png';
+import bridge_frame from '../asset/dbPictures/bridge/bridge_frame.png';
+import bridge_interior from '../asset/dbPictures/bridge/bridge_interior.png';
+import salo from '../asset/dbPictures/salo/salo.png';
+import salo_interior from '../asset/dbPictures/salo/salo_interior.png';
+
 export interface Gallery {
   id: number;
   img: string;
@@ -14,67 +38,103 @@ export interface Gallery {
 export const gallery: Gallery[] = [
   {
     id: 1,
-    img: Sunflower,
-    title: 'Sunflower',
-    genre: 'landscape',
+    img: luteFrame,
+    title: 'Lute',
+    genre: 'Still Life',
     size: '60 * 80 cm',
-    imgInterior: SunflowerInterior,
-    imgRow: SunflowerRaw, //без рамы белый фон
+    imgInterior: luteInterior,
+    imgRow: lute, //без рамы белый фон
     description:
       '«Подсолнухи» стали своего рода визитной карточкой художника и занимают в его творческом наследии такое же важное место, как, например, «Джоконда» в творчестве Леонардо или «Черный квадрат» в творчестве Малевича. Как известно, Винсент часто писал цветы. Существуют его полотна, изображающие ветки цветущих деревьев – яблонь, акаций, миндаля, каштанов. Нравилось ему рисовать и простые полевые цветы – ромашки, маки, васильки и даже чертополох. Но особую любовь Ван Гог испытывал к подсолнухам, о чем неоднократно писал своему брату. Художник признавался в письмах, что это растение он ассоциирует с собой. Возможно, это было связано с тем, что это желтые цветы, а этот цвет, как известно, был для живописца самым любимым.\n',
   },
   {
     id: 2,
-    img: Sunflower,
-    title: 'Sunflower',
-    genre: 'Portrait',
+    img: forestCows_frame,
+    title: 'Cows in a forest',
+    genre: 'landscape',
     size: '60 * 80 cm',
-    imgInterior: SunflowerInterior,
-    imgRow: SunflowerRaw, //без рамы белый фон
+    imgInterior: forestCows_interior,
+    imgRow: forestCows, //без рамы белый фон
     description:
       '«Подсолнухи» стали своего рода визитной карточкой художника и занимают в его творческом наследии такое же важное место, как, например, «Джоконда» в творчестве Леонардо или «Черный квадрат» в творчестве Малевича. Как известно, Винсент часто писал цветы. Существуют его полотна, изображающие ветки цветущих деревьев – яблонь, акаций, миндаля, каштанов. Нравилось ему рисовать и простые полевые цветы – ромашки, маки, васильки и даже чертополох. Но особую любовь Ван Гог испытывал к подсолнухам, о чем неоднократно писал своему брату. Художник признавался в письмах, что это растение он ассоциирует с собой. Возможно, это было связано с тем, что это желтые цветы, а этот цвет, как известно, был для живописца самым любимым.\n',
   },
+
   {
     id: 3,
-    img: Sunflower,
-    title: 'Sunflower',
-    genre: 'Still Life',
+    img: winter_frame,
+    title: 'Winter',
+    genre: 'landscape',
     size: '60 * 80 cm',
-    imgInterior: SunflowerInterior,
-    imgRow: SunflowerRaw, //без рамы белый фон
+    imgInterior: winter_interior,
+    imgRow: winter, //без рамы белый фон
     description:
       '«Подсолнухи» стали своего рода визитной карточкой художника и занимают в его творческом наследии такое же важное место, как, например, «Джоконда» в творчестве Леонардо или «Черный квадрат» в творчестве Малевича. Как известно, Винсент часто писал цветы. Существуют его полотна, изображающие ветки цветущих деревьев – яблонь, акаций, миндаля, каштанов. Нравилось ему рисовать и простые полевые цветы – ромашки, маки, васильки и даже чертополох. Но особую любовь Ван Гог испытывал к подсолнухам, о чем неоднократно писал своему брату. Художник признавался в письмах, что это растение он ассоциирует с собой. Возможно, это было связано с тем, что это желтые цветы, а этот цвет, как известно, был для живописца самым любимым.\n',
   },
   {
     id: 4,
-    img: Sunflower,
-    title: 'Sunflower',
-    genre: 'landscape',
+    img: fruits_frame,
+    title: 'Fruits',
+    genre: 'Still Life',
     size: '60 * 80 cm',
-    imgInterior: SunflowerInterior,
-    imgRow: SunflowerRaw, //без рамы белый фон
+    imgInterior: fruits_interior,
+    imgRow: fruits, //без рамы белый фон
     description:
       '«Подсолнухи» стали своего рода визитной карточкой художника и занимают в его творческом наследии такое же важное место, как, например, «Джоконда» в творчестве Леонардо или «Черный квадрат» в творчестве Малевича. Как известно, Винсент часто писал цветы. Существуют его полотна, изображающие ветки цветущих деревьев – яблонь, акаций, миндаля, каштанов. Нравилось ему рисовать и простые полевые цветы – ромашки, маки, васильки и даже чертополох. Но особую любовь Ван Гог испытывал к подсолнухам, о чем неоднократно писал своему брату. Художник признавался в письмах, что это растение он ассоциирует с собой. Возможно, это было связано с тем, что это желтые цветы, а этот цвет, как известно, был для живописца самым любимым.\n',
   },
-  // {
-  //   id: 5,
-  //   img: Sunflower,
-  //   title: 'Sunflower',
-  //   genre: 'landscape',
-  //   size: '60 * 80 cm',
-  // },
-  // {
-  //   id: 6,
-  //   img: Sunflower,
-  //   title: 'Sunflower',
-  //   genre: 'landscape',
-  //   size: '60 * 80 cm',
-  // },
-  // {
-  //   id: 7,
-  //   img: Sunflower,
-  //   title: 'Sunflower',
-  //   genre: 'landscape',
-  //   size: '60 * 80 cm',
-  // },
+
+  {
+    id: 5,
+    img: astraFruits_frame,
+    title: 'Astra with fruits',
+    genre: 'Still Life',
+    size: '60 * 80 cm',
+    imgInterior: astraFruits_interior,
+    imgRow: astraFruits, //без рамы белый фон
+    description:
+      '«Подсолнухи» стали своего рода визитной карточкой художника и занимают в его творческом наследии такое же важное место, как, например, «Джоконда» в творчестве Леонардо или «Черный квадрат» в творчестве Малевича. Как известно, Винсент часто писал цветы. Существуют его полотна, изображающие ветки цветущих деревьев – яблонь, акаций, миндаля, каштанов. Нравилось ему рисовать и простые полевые цветы – ромашки, маки, васильки и даже чертополох. Но особую любовь Ван Гог испытывал к подсолнухам, о чем неоднократно писал своему брату. Художник признавался в письмах, что это растение он ассоциирует с собой. Возможно, это было связано с тем, что это желтые цветы, а этот цвет, как известно, был для живописца самым любимым.\n',
+  },
+  {
+    id: 6,
+    img: astraAutumn_frame,
+    title: 'Astra at autumn',
+    genre: 'Still Life',
+    size: '60 * 80 cm',
+    imgInterior: astraAutumn_interior,
+    imgRow: astraAutumn, //без рамы белый фон
+    description:
+      '«Подсолнухи» стали своего рода визитной карточкой художника и занимают в его творческом наследии такое же важное место, как, например, «Джоконда» в творчестве Леонардо или «Черный квадрат» в творчестве Малевича. Как известно, Винсент часто писал цветы. Существуют его полотна, изображающие ветки цветущих деревьев – яблонь, акаций, миндаля, каштанов. Нравилось ему рисовать и простые полевые цветы – ромашки, маки, васильки и даже чертополох. Но особую любовь Ван Гог испытывал к подсолнухам, о чем неоднократно писал своему брату. Художник признавался в письмах, что это растение он ассоциирует с собой. Возможно, это было связано с тем, что это желтые цветы, а этот цвет, как известно, был для живописца самым любимым.\n',
+  },
+  {
+    id: 7,
+    img: forestGreen_frame,
+    title: 'Forest in green',
+    genre: 'landscape',
+    size: '60 * 80 cm',
+    imgInterior: forestGreen_interior,
+    imgRow: forestGreen, //без рамы белый фон
+    description:
+      '«Подсолнухи» стали своего рода визитной карточкой художника и занимают в его творческом наследии такое же важное место, как, например, «Джоконда» в творчестве Леонардо или «Черный квадрат» в творчестве Малевича. Как известно, Винсент часто писал цветы. Существуют его полотна, изображающие ветки цветущих деревьев – яблонь, акаций, миндаля, каштанов. Нравилось ему рисовать и простые полевые цветы – ромашки, маки, васильки и даже чертополох. Но особую любовь Ван Гог испытывал к подсолнухам, о чем неоднократно писал своему брату. Художник признавался в письмах, что это растение он ассоциирует с собой. Возможно, это было связано с тем, что это желтые цветы, а этот цвет, как известно, был для живописца самым любимым.\n',
+  },
+  {
+    id: 8,
+    img: bridge_frame,
+    title: 'Bridge',
+    genre: 'landscape',
+    size: '60 * 80 cm',
+    imgInterior: bridge_interior,
+    imgRow: bridge, //без рамы белый фон
+    description:
+      '«Подсолнухи» стали своего рода визитной карточкой художника и занимают в его творческом наследии такое же важное место, как, например, «Джоконда» в творчестве Леонардо или «Черный квадрат» в творчестве Малевича. Как известно, Винсент часто писал цветы. Существуют его полотна, изображающие ветки цветущих деревьев – яблонь, акаций, миндаля, каштанов. Нравилось ему рисовать и простые полевые цветы – ромашки, маки, васильки и даже чертополох. Но особую любовь Ван Гог испытывал к подсолнухам, о чем неоднократно писал своему брату. Художник признавался в письмах, что это растение он ассоциирует с собой. Возможно, это было связано с тем, что это желтые цветы, а этот цвет, как известно, был для живописца самым любимым.\n',
+  },
+  {
+    id: 9,
+    img: salo,
+    title: 'Salo',
+    genre: 'Still Life',
+    size: '60 * 80 cm',
+    imgInterior: salo_interior,
+    imgRow: salo, //без рамы белый фон
+    description:
+      '«Подсолнухи» стали своего рода визитной карточкой художника и занимают в его творческом наследии такое же важное место, как, например, «Джоконда» в творчестве Леонардо или «Черный квадрат» в творчестве Малевича. Как известно, Винсент часто писал цветы. Существуют его полотна, изображающие ветки цветущих деревьев – яблонь, акаций, миндаля, каштанов. Нравилось ему рисовать и простые полевые цветы – ромашки, маки, васильки и даже чертополох. Но особую любовь Ван Гог испытывал к подсолнухам, о чем неоднократно писал своему брату. Художник признавался в письмах, что это растение он ассоциирует с собой. Возможно, это было связано с тем, что это желтые цветы, а этот цвет, как известно, был для живописца самым любимым.\n',
+  },
 ];

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './Pictures.scss';
 import { ParallaxBanner, ParallaxProvider } from 'react-scroll-parallax';
-import gernikaJPG from '../../asset/gernika.jpg';
+import bannerImgPNG from '../../asset/bannerImg.png';
 import { Container } from '../../components/Container/Container';
 import { Footer } from '../../components/Footer/Footer';
 import { Sidebar } from '../../components/Sidebar/Sidebar';
@@ -60,7 +60,7 @@ export const Pictures = () => {
     <Container>
       <ParallaxProvider>
         <ParallaxBanner
-          layers={[{ image: gernikaJPG, speed: -30 }]}
+          layers={[{ image: bannerImgPNG, speed: -30 }]}
           className="main-picture-banner"
         />
       </ParallaxProvider>

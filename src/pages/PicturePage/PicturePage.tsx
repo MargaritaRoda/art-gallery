@@ -9,7 +9,7 @@ import { Footer } from '../../components/Footer/Footer';
 
 export const PicturePage = () => {
   const id = useIdPictureInNumber();
-  console.log(id);
+  console.log('id selected picture', id);
   const allPictures = useSelector(selectorAllPictures);
   console.log(allPictures);
 
@@ -17,6 +17,8 @@ export const PicturePage = () => {
   if (!picture) {
     throw new Error('No picture with id given');
   }
+
+  console.log('picture', picture);
   const { img, imgInterior, imgRow, title, genre, size, description } = picture;
 
   return (

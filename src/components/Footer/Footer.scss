@@ -6,6 +6,19 @@
   color: var(--text);
   min-height: 30%;
   padding: 80px;
+  position: relative;
+
+  &::before {
+    content: " ";
+    height: 1px;
+    width: 90%;
+    position: absolute;
+    top: 10%;
+    right: -40%;
+    transform: translate(-50%, -50%);
+    background-color: var(--text);
+
+  }
 }
 
 .footer-item {
@@ -15,7 +28,7 @@
 
 }
 
-.footer-item__subtitle{
+.footer-item__subtitle {
   font-weight: 700;
 }
 
@@ -55,6 +68,7 @@
   height: 45px;
   border-radius: 50%;
   background-color: var(--text);
+
   &:hover {
     cursor: pointer;
   }
