@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './PicturePage.scss';
 import { PictureContent } from '../../components/PictureContent/PictureContent';
 import { useSelector } from 'react-redux';
@@ -8,6 +8,9 @@ import { useIdPictureInNumber } from '../../services/hooks/idHook';
 import { Footer } from '../../components/Footer/Footer';
 
 export const PicturePage = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const id = useIdPictureInNumber();
   console.log('id selected picture', id);
   const allPictures = useSelector(selectorAllPictures);

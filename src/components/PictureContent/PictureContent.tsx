@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './PictureContent.scss';
 import { ImgFullScreen } from '../ImgFullScreen/ImgFullScreen';
+import { ScrollRestoration } from 'react-router-dom';
 
 type PictureContent = {
   id: number;
@@ -58,6 +59,7 @@ export const PictureContent: React.FC<PictureContent> = ({
 
   const handleCloseFullScreenImg = () => {
     setIsFullScreenImgOpen(false);
+    document.body.style.overflow = 'auto';
   };
 
   return (
@@ -74,7 +76,10 @@ export const PictureContent: React.FC<PictureContent> = ({
               src={slide === 0 ? img : image}
               alt={title}
               className="slide-image"
-              onClick={() => setIsFullScreenImgOpen(true)}
+              onClick={() => {
+                setIsFullScreenImgOpen(true);
+                document.body.style.overflow = 'hidden';
+              }}
             />
           </div>
         </div>
@@ -89,7 +94,7 @@ export const PictureContent: React.FC<PictureContent> = ({
         <p className="picture-text-block-description">{description}</p>
       </div>
       <ImgFullScreen
-        img={image}
+        img={slide === 0 ? img : image}
         isOpen={isFullScreenImgOpen}
         title={title}
         onHide={handleCloseFullScreenImg}

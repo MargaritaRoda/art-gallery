@@ -12,7 +12,10 @@ import {
 } from '../../services/config/routs';
 import { NavLink } from 'react-router-dom';
 
-export const Footer: React.FC = memo(() => {
+interface FooterProps {
+  scrollToAbout?: () => void;
+}
+export const Footer = memo(({ scrollToAbout }: FooterProps) => {
   return (
     <Container className="footer">
       <div className="footer-item" id={contactId}>
@@ -27,7 +30,10 @@ export const Footer: React.FC = memo(() => {
         <p className="footer-item__subtitle">Links</p>
         <ul className="footer-item__links">
           <li>
-            <a href={`${INDEX}#${aboutId}`}>About</a>
+            <a href={`${INDEX}#${aboutId}`} onClick={scrollToAbout}>
+              About
+            </a>
+            {/*<a onClick={scrollToAbout}>About</a>*/}
           </li>
           <li>
             <a href={PICTURES}>Gallery</a>

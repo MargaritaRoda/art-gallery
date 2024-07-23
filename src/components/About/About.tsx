@@ -1,12 +1,16 @@
-import React from 'react';
+import React, { forwardRef, memo, useEffect, useRef } from 'react';
 import './About.scss';
 import { Container } from '../Container/Container';
 import { aboutId } from '../../services/config/routs';
 
-export const About: React.FC = () => {
+interface AboutProps {
+  ref?: React.MutableRefObject<HTMLElement>;
+}
+
+export const About = forwardRef<HTMLElement, AboutProps>((_, ref) => {
   return (
     <Container className="about-wrapper">
-      <section id={aboutId} className="about-section">
+      <section id={aboutId} className="about-section" ref={ref}>
         <h2 className="about-title">
           Valentin is the master who follows the traditions of painting when
           creating works of fine art
@@ -26,4 +30,4 @@ export const About: React.FC = () => {
       </section>
     </Container>
   );
-};
+});
